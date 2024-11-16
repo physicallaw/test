@@ -5,19 +5,49 @@ url: https://physicallaw.github.io
 
 defaults:
   - scope:
-      path: "docs"
+      path: "system-administration"
       type: "pages"
     values:
-      layout: "default"
+      layout: "page"
+  - scope:
+      path: "devops"
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "data-engineering"
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "programming-languages"
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "computer-science"
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "software-engineering"
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "machine-learning"
+      type: "pages"
+    values:
+      layout: "page"
 
 search_enabled: true
 search:
   heading_level: 2
   previews: 3
-  preview_words_before: 3
-  preview_words_after: 3
+  preview_words_before: 5
+  preview_words_after: 10
   tokenizer_separator: /[\s/]+/
-  rel_url: true
+  rel_url: false
   button: false
   focus_shortcut_key: "k"
 
@@ -39,8 +69,14 @@ plugins:
   - jekyll-github-metadata
   - jekyll-include-cache
   - jekyll-sitemap
+  - jekyll-last-modified-at
 
 kramdown:
   syntax_highlighter_opts:
     block:
-      line_numbers: true
+      line_numbers: false
+
+enable_copy_code_button: true
+
+back_to_top: true
+back_to_top_text: "Back to top"
