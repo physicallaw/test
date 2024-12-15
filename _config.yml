@@ -76,6 +76,8 @@ kramdown:
     block:
       line_numbers: false
 
+math: true
+
 enable_copy_code_button: true
 
 back_to_top: true

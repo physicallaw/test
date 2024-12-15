@@ -23,9 +23,14 @@ layout: table_wrappers
       <div id="main-content" class="main-content">
         <main>
           <h1>{{page.title}}</h1>
-          {% if page.last_modified_at %}
-            <p style="text-align: right;">최종 수정일: {{ page.last_modified_at | date: "%Y년 %m월 %d일" }}</p>
-          {% endif %}
+          <p style="text-align: right;">
+            {% if page.date %}
+              게시일: {{ page.date | date: "%Y년 %m월 %d일" }}{% if page.last_modified_at %} <br> {% endif %}
+            {% endif %}
+            {% if page.last_modified_at %}
+              최종 업데이트: {{ page.last_modified_at | date: "%Y년 %m월 %d일" }}
+            {% endif %}
+          </p>
           {% if site.heading_anchors != false %}
             {% include vendor/anchor_headings.html html=content beforeHeading="true" anchorBody="<svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><use xlink:href=\"#svg-link\"></use></svg>" anchorClass="anchor-heading" anchorAttrs="aria-labelledby=\"%html_id%\"" %}
           {% else %}
